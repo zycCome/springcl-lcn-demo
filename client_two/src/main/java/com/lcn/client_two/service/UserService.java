@@ -21,12 +21,12 @@ public class UserService {
 
     @Transactional
     @LcnTransaction
-    public Integer saveUser(){
+    public Integer saveUser(int a){
         User user = new User();
         user.setEmail("lcnxxx@xx.com");
         user.setAge(17);
         user.setName("lcn");
-        int res = 1/0;
+        int res = 1/a;
       return   userMapper.insert(user);
     }
 }

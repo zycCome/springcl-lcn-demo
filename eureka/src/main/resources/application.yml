@@ -13,8 +13,8 @@ eureka:
 spring:
   application:
     name: eurka-serve
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/hlvy?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT
-    username: hlvy
-    password: 123456
-    driver-class-name: com.mysql.jdbc.Driver
+#  datasource:
+#    url: jdbc:mysql://127.0.0.1:3306/hlvy?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT
+#    username: hlvy
+#    password: 123456
+#    driver-class-name: com.mysql.jdbc.Driver

@@ -5,8 +5,8 @@ spring:
   application:
     name: client-one
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/hlvy?characterEncoding=UTF-8
-    username: hlvy
+    url: jdbc:mysql://127.0.0.1:3306/lcn-client-one?characterEncoding=UTF-8
+    username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
 eureka:
@@ -17,24 +17,22 @@ eureka:
 
 
 mybatis-plus:
-  #MyBaits ±ğÃû°üÉ¨ÃèÂ·¾¶£¬Í¨¹ı¸ÃÊôĞÔ¿ÉÒÔ¸ø°üÖĞµÄÀà×¢²á±ğÃû£¬×¢²áºóÔÚ Mapper ¶ÔÓ¦µÄ XML ÎÄ¼şÖĞ¿ÉÒÔÖ±½ÓÊ¹ÓÃÀàÃû£¬¶ø²»ÓÃÊ¹ÓÃÈ«ÏŞ¶¨µÄÀàÃû£¨¼´ XML ÖĞµ÷ÓÃµÄÊ±ºò²»ÓÃ°üº¬°üÃû£©¡£
+  #MyBaits åˆ«ååŒ…æ‰«æè·¯å¾„ï¼Œé€šè¿‡è¯¥å±æ€§å¯ä»¥ç»™åŒ…ä¸­çš„ç±»æ³¨å†Œåˆ«åï¼Œæ³¨å†Œååœ¨ Mapper å¯¹åº”çš„ XML æ–‡ä»¶ä¸­å¯ä»¥ç›´æ¥ä½¿ç”¨ç±»åï¼Œè€Œä¸ç”¨ä½¿ç”¨å…¨é™å®šçš„ç±»åï¼ˆå³ XML ä¸­è°ƒç”¨çš„æ—¶å€™ä¸ç”¨åŒ…å«åŒ…åï¼‰ã€‚
   type-aliases-package: com.lcn.clientone.entity
-  #¸ÃÅäÖÃÇëºÍ typeAliasesPackage Ò»ÆğÊ¹ÓÃ£¬Èç¹ûÅäÖÃÁË¸ÃÊôĞÔ£¬Ôò½ö½ö»áÉ¨ÃèÂ·¾¶ÏÂÒÔ¸ÃÀà×÷Îª¸¸ÀàµÄÓò¶ÔÏó
+  #è¯¥é…ç½®è¯·å’Œ typeAliasesPackage ä¸€èµ·ä½¿ç”¨ï¼Œå¦‚æœé…ç½®äº†è¯¥å±æ€§ï¼Œåˆ™ä»…ä»…ä¼šæ‰«æè·¯å¾„ä¸‹ä»¥è¯¥ç±»ä½œä¸ºçˆ¶ç±»çš„åŸŸå¯¹è±¡
   type-aliases-super-type: java.lang.Object
-  #MyBatis Mapper Ëù¶ÔÓ¦µÄ XML ÎÄ¼şÎ»ÖÃ£¬Èç¹ûÄúÔÚ Mapper ÖĞÓĞ×Ô¶¨Òå·½·¨£¨XML ÖĞÓĞ×Ô¶¨ÒåÊµÏÖ£©£¬ĞèÒª½øĞĞ¸ÃÅäÖÃ£¬¸æËß Mapper Ëù¶ÔÓ¦µÄ XML ÎÄ¼şÎ»ÖÃ¡£
+  #MyBatis Mapper æ‰€å¯¹åº”çš„ XML æ–‡ä»¶ä½ç½®ï¼Œå¦‚æœæ‚¨åœ¨ Mapper ä¸­æœ‰è‡ªå®šä¹‰æ–¹æ³•ï¼ˆXML ä¸­æœ‰è‡ªå®šä¹‰å®ç°ï¼‰ï¼Œéœ€è¦è¿›è¡Œè¯¥é…ç½®ï¼Œå‘Šè¯‰ Mapper æ‰€å¯¹åº”çš„ XML æ–‡ä»¶ä½ç½®ã€‚
  # mapper-locations: classpath*:mybatis/*.xml
-  #MyBatis ÅäÖÃÎÄ¼şÎ»ÖÃ£¬Èç¹ûÄúÓĞµ¥¶ÀµÄ MyBatis ÅäÖÃ£¬Çë½«ÆäÂ·¾¶ÅäÖÃµ½ configLocation ÖĞ¡£
+  #MyBatis é…ç½®æ–‡ä»¶ä½ç½®ï¼Œå¦‚æœæ‚¨æœ‰å•ç‹¬çš„ MyBatis é…ç½®ï¼Œè¯·å°†å…¶è·¯å¾„é…ç½®åˆ° configLocation ä¸­ã€‚
   #config-location: classpath:mybatis-config.xml
-  #Æô¶¯Ê±ÊÇ·ñ¼ì²é MyBatis XML ÎÄ¼şµÄ´æÔÚ£¬Ä¬ÈÏ²»¼ì²é
+  #å¯åŠ¨æ—¶æ˜¯å¦æ£€æŸ¥ MyBatis XML æ–‡ä»¶çš„å­˜åœ¨ï¼Œé»˜è®¤ä¸æ£€æŸ¥
   check-config-location: false
   global-config:
     db-config:
-      logic-delete-value: 1 # Âß¼­ÒÑÉ¾³ıÖµ(Ä¬ÈÏÎª 1)
-      logic-not-delete-value: 0 # Âß¼­Î´É¾³ıÖµ(Ä¬ÈÏÎª 0)
-#ÉèÖÃÈÕÖ¾ ¼¶±ğ
+      logic-delete-value: 1 # é€»è¾‘å·²åˆ é™¤å€¼(é»˜è®¤ä¸º 1)
+      logic-not-delete-value: 0 # é€»è¾‘æœªåˆ é™¤å€¼(é»˜è®¤ä¸º 0)
+#è®¾ç½®æ—¥å¿— çº§åˆ«
 logging:
   level:
-    root: warn
+    root: info
     com.lcn.clientone: trace
-  pattern:
-    console: '%P%m%n'

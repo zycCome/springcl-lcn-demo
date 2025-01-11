@@ -20,7 +20,7 @@ import lombok.Data;
 /**
  * @TableName 指定数据库表名
  */
-@TableName("User")
+@TableName("super_user")
 public class User {
 
     /**

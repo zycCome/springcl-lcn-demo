@@ -5,6 +5,7 @@ import com.lcn.feign.client.Client2;
 import com.lcn.feign.client.Client3;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -27,8 +28,9 @@ public class FeignController {
 
     @RequestMapping("testLcn")
     @LcnTransaction
-    public  String testLcn(){
+    public  String testLcn(@RequestParam(value = "a" ,defaultValue = "1") int a){
         Map<String, Object> map  = new HashMap<>();
+        map.put("a",a);
         Integer res = (Integer) client2.getMethod("tuser/saveUser",map);
         Integer res1 = (Integer) client3.getMethod("userTwo/insertUser",map);
        return res+"-"+res1;
