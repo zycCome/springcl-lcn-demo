@@ -49,3 +49,13 @@ logging:
   level:
     root: info
     com.hlvy.mybatis_plus: trace
+# 禁用重试，避免重试
+ribbon:
+  MaxAutoRetriesNextServer: 0
+# 超时时间设置长些，避免执行过程中超时导致分布式事务取消
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 10000
